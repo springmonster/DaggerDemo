@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DaggerDemo</string>
+    <string name="inject">Inject的使用</string>
+    <string name="component">Component的使用</string>
+    <string name="qualifier">Qualifier的使用</string>
+    <string name="siblings">依赖关系Component</string>
+    <string name="extend_one">继承关系Component1</string>
+    <string name="extend_two">继承关系Component2</string>
+</resources>
