@@ -30,6 +30,8 @@
 > package scopetwo
 >
 > 全局单例
+* @BindInstance
+> package bindinstance
 * TODO
 > 1. Lazy
 > 2. Provide
