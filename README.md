@@ -1,5 +1,5 @@
 # DaggerDemo
-## Have done
+## Done
 * @Inject
 > package inject
 * @Module
