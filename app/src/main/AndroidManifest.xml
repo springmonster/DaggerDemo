@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".scopetwo.ScopeTwoActivity">
         </activity>
+        <activity android:name=".scopetwo.ScopeTwoAnotherActivity">
+        </activity>
     </application>
 
 </manifest>

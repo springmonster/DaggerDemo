@@ -8,4 +8,5 @@
     <string name="extend_two">继承关系Component2</string>
     <string name="scope_one">Scope的使用1</string>
     <string name="scope_two">Scope的使用2</string>
+    <string name="jump">跳转</string>
 </resources>
