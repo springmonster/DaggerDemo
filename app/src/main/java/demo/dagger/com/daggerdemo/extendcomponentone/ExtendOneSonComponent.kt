@@ -4,5 +4,5 @@ import dagger.Subcomponent
 
 @Subcomponent(modules = [ExtendOneSonModule::class])
 interface ExtendOneSonComponent {
-    fun inject(extendComponentOneActivity: ExtendComponentOneActivity)
+    fun inject(extendOneComponentActivity: ExtendOneComponentActivity)
 }

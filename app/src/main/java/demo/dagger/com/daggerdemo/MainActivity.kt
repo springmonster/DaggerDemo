@@ -3,7 +3,7 @@ package demo.dagger.com.daggerdemo
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import demo.dagger.com.daggerdemo.component.ComponentActivity
-import demo.dagger.com.daggerdemo.extendcomponentone.ExtendComponentOneActivity
+import demo.dagger.com.daggerdemo.extendcomponentone.ExtendOneComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponenttwo.ExtendTwoComponentActivity
 import demo.dagger.com.daggerdemo.inject.InjectActivity
 import demo.dagger.com.daggerdemo.qualtifier.QualifierActivity
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         activity_main_extend_component_one_btn.setOnClickListener {
-            startActivity<ExtendComponentOneActivity>()
+            startActivity<ExtendOneComponentActivity>()
         }
 
         activity_main_extend_component_two_btn.setOnClickListener {

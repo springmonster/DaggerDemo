@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".siblingscomponent.SiblingsActivity">
         </activity>
-        <activity android:name=".extendcomponentone.ExtendComponentOneActivity">
+        <activity android:name=".extendcomponentone.ExtendOneComponentActivity">
         </activity>
         <activity android:name=".extendcomponenttwo.ExtendTwoComponentActivity">
         </activity>

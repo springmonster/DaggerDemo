@@ -7,7 +7,7 @@ import demo.dagger.com.daggerdemo.R
 import kotlinx.android.synthetic.main.activity_extend_component_one.*
 import javax.inject.Inject
 
-class ExtendComponentOneActivity : AppCompatActivity() {
+class ExtendOneComponentActivity : AppCompatActivity() {
 
     @Inject
     lateinit var cloth: Cloth
