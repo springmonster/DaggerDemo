@@ -32,9 +32,8 @@
 > 全局单例
 * @BindInstance
 > package bindinstance
-* TODO
-> 1. Lazy
-> 2. Provide
-> 3. Others(like @Binds...)
-* In the Future
-> Dagger Android
+## TODO
+* Lazy
+* Provider
+* Others(like @Binds...)
+* Dagger Android
