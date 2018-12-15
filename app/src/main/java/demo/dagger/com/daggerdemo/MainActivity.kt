@@ -7,6 +7,8 @@ import demo.dagger.com.daggerdemo.extendcomponentone.ExtendOneComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponenttwo.ExtendTwoComponentActivity
 import demo.dagger.com.daggerdemo.inject.InjectActivity
 import demo.dagger.com.daggerdemo.qualtifier.QualifierActivity
+import demo.dagger.com.daggerdemo.scopeone.ScopeOneActivity
+import demo.dagger.com.daggerdemo.scopetwo.ScopeTwoActivity
 import demo.dagger.com.daggerdemo.siblingscomponent.SiblingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
@@ -39,6 +41,14 @@ class MainActivity : AppCompatActivity() {
 
         activity_main_extend_component_two_btn.setOnClickListener {
             startActivity<ExtendTwoComponentActivity>()
+        }
+
+        activity_main_scope_one_btn.setOnClickListener {
+            startActivity<ScopeOneActivity>()
+        }
+
+        activity_main_scope_two_btn.setOnClickListener {
+            startActivity<ScopeTwoActivity>()
         }
     }
 }

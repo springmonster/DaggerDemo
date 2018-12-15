@@ -28,6 +28,10 @@
         </activity>
         <activity android:name=".extendcomponenttwo.ExtendTwoComponentActivity">
         </activity>
+        <activity android:name=".scopeone.ScopeOneActivity">
+        </activity>
+        <activity android:name=".scopetwo.ScopeTwoActivity">
+        </activity>
     </application>
 
 </manifest>
