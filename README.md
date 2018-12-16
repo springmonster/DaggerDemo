@@ -1,5 +1,6 @@
 # DaggerDemo
-## Done
+## app文件夹[Dagger的Demo]
+#### Done
 * @Inject
 > package inject
 * @Module
@@ -42,6 +43,10 @@
 > package global
 >
 > component之间采用了dependencies的方式
-## TODO
+#### TODO
 * Others(like @Binds...)
-* Dagger Android
+## daggerandroiddemo文件夹[DaggerAndroid的Demo]
+#### TODO
+* DaggerAndroid的使用
+#### PS
+* Dagger的说明文档谁看谁知道。。。
