@@ -23,7 +23,7 @@ class ExtendOneComponentActivity : AppCompatActivity() {
             .builder()
             .extendOneFatherModule(ExtendOneFatherModule())
             .build()
-            .hasExtendOneSonComponent()
+            .hasExtendOneSonComponent(ExtendOneSonModule())
 
         extendOneSonComponent.inject(this)
 

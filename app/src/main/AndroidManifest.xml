@@ -38,6 +38,8 @@
         </activity>
         <activity android:name=".bindinstance.BindInstanceActivity">
         </activity>
+        <activity android:name=".lazy.LazyActivity">
+        </activity>
     </application>
 
 </manifest>

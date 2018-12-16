@@ -30,10 +30,14 @@
 > package scopetwo
 >
 > 全局单例
-* @BindInstance
+* @BindsInstance
 > package bindinstance
-## TODO
 * Lazy
-* Provider
+> package lazy
+>
+> 1.Lazy
+>
+> 2.Provider
+## TODO
 * Others(like @Binds...)
 * Dagger Android

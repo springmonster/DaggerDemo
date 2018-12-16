@@ -4,5 +4,5 @@ import dagger.Component
 
 @Component(modules = [ExtendOneFatherModule::class])
 interface ExtendOneFatherComponent {
-    fun hasExtendOneSonComponent(): ExtendOneSonComponent
+    fun hasExtendOneSonComponent(extendExtendOneSonModule: ExtendOneSonModule): ExtendOneSonComponent
 }

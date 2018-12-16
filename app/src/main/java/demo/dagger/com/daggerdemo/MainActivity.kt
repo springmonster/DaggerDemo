@@ -2,11 +2,11 @@ package demo.dagger.com.daggerdemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import demo.dagger.com.daggerdemo.bindinstance.BindInstanceActivity
 import demo.dagger.com.daggerdemo.component.ComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponentone.ExtendOneComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponenttwo.ExtendTwoComponentActivity
 import demo.dagger.com.daggerdemo.inject.InjectActivity
+import demo.dagger.com.daggerdemo.lazy.LazyActivity
 import demo.dagger.com.daggerdemo.qualtifier.QualifierActivity
 import demo.dagger.com.daggerdemo.scopeone.ScopeOneActivity
 import demo.dagger.com.daggerdemo.scopetwo.ScopeTwoActivity
@@ -52,8 +52,8 @@ class MainActivity : AppCompatActivity() {
             startActivity<ScopeTwoActivity>()
         }
 
-        activity_main_bind_instance_btn.setOnClickListener {
-            startActivity<BindInstanceActivity>()
+        activity_main_lazy_btn.setOnClickListener {
+            startActivity<LazyActivity>()
         }
     }
 }

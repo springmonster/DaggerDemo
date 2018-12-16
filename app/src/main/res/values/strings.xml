@@ -10,4 +10,5 @@
     <string name="scope_two">Scope的使用2</string>
     <string name="jump">跳转</string>
     <string name="bind_instance">BindInstance的使用</string>
+    <string name="lazy">Lazy和Provider的使用</string>
 </resources>
