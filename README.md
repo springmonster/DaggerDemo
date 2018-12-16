@@ -38,6 +38,10 @@
 > 1.Lazy
 >
 > 2.Provider
+* 全局AppComponent和AppModule的使用
+> package global
+>
+> component之间采用了dependencies的方式
 ## TODO
 * Others(like @Binds...)
 * Dagger Android

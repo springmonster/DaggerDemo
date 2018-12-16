@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import demo.dagger.com.daggerdemo.component.ComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponentone.ExtendOneComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponenttwo.ExtendTwoComponentActivity
+import demo.dagger.com.daggerdemo.global.GlobalTestActivity
 import demo.dagger.com.daggerdemo.inject.InjectActivity
 import demo.dagger.com.daggerdemo.lazy.LazyActivity
 import demo.dagger.com.daggerdemo.qualtifier.QualifierActivity
@@ -54,6 +55,10 @@ class MainActivity : AppCompatActivity() {
 
         activity_main_lazy_btn.setOnClickListener {
             startActivity<LazyActivity>()
+        }
+
+        activity_main_global_btn.setOnClickListener {
+            startActivity<GlobalTestActivity>()
         }
     }
 }

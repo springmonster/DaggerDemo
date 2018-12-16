@@ -11,4 +11,9 @@
     <string name="jump">跳转</string>
     <string name="bind_instance">BindInstance的使用</string>
     <string name="lazy">Lazy和Provider的使用</string>
+    <string name="global">全局AppComponent的使用</string>
+    <string name="todo">todo</string>
+
+    <!-- for test -->
+    <string name="global_test">这就是从全局的AppComponent拿到的Resources</string>
 </resources>
