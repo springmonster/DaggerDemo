@@ -2,6 +2,7 @@ package demo.dagger.com.daggerdemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import demo.dagger.com.daggerdemo.binds.BindsActivity
 import demo.dagger.com.daggerdemo.component.ComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponentone.ExtendOneComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponenttwo.ExtendTwoComponentActivity
@@ -59,6 +60,10 @@ class MainActivity : AppCompatActivity() {
 
         activity_main_global_btn.setOnClickListener {
             startActivity<GlobalTestActivity>()
+        }
+
+        activity_main_binds_btn.setOnClickListener {
+            startActivity<BindsActivity>()
         }
     }
 }

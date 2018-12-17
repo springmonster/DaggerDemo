@@ -43,6 +43,8 @@
         </activity>
         <activity android:name=".global.GlobalTestActivity">
         </activity>
+        <activity android:name=".binds.BindsActivity">
+        </activity>
     </application>
 
 </manifest>

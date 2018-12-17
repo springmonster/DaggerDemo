@@ -33,6 +33,8 @@
 > 全局单例
 * @BindsInstance
 > package bindinstance
+* @Binds
+> package binds
 * Lazy
 > package lazy
 >
