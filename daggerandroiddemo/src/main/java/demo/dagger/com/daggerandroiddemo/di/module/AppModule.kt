@@ -1,30 +1,28 @@
 package demo.dagger.com.daggerandroiddemo.di.module
 
+import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Resources
 import dagger.Module
 import dagger.Provides
-import demo.dagger.com.daggerandroiddemo.MyApp
 import javax.inject.Singleton
 
 @Module
-class AppModule(val myApp: MyApp) {
+class AppModule {
+
     @Singleton
     @Provides
-    fun provideMyApp(): MyApp {
-        return myApp
+    fun provideSharedPreference(application: Application): SharedPreferences {
+        return application.applicationContext.getSharedPreferences(
+            application.applicationContext.packageName,
+            Context.MODE_PRIVATE
+        )
     }
 
     @Singleton
     @Provides
-    fun provideSharedPreference(): SharedPreferences {
-        return myApp.getSharedPreferences(myApp.packageName, Context.MODE_PRIVATE)
-    }
-
-    @Singleton
-    @Provides
-    fun provideResources(): Resources {
-        return myApp.resources
+    fun provideResources(application: Application): Resources {
+        return application.applicationContext.resources
     }
 }
