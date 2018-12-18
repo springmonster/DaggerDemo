@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JetPackApplication</string>
+
+    <string name="fragment_main">fragment main</string>
+    <string name="fragment1">fragment1</string>
+    <string name="fragment2">fragment2</string>
+    <string name="fragment3">fragment3</string>
+</resources>
