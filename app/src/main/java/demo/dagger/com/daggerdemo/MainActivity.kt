@@ -8,6 +8,7 @@ import demo.dagger.com.daggerdemo.extendcomponentone.ExtendOneComponentActivity
 import demo.dagger.com.daggerdemo.extendcomponenttwo.ExtendTwoComponentActivity
 import demo.dagger.com.daggerdemo.global.GlobalTestActivity
 import demo.dagger.com.daggerdemo.inject.InjectActivity
+import demo.dagger.com.daggerdemo.intomapintoset.IntoMapIntoSetActivity
 import demo.dagger.com.daggerdemo.lazy.LazyActivity
 import demo.dagger.com.daggerdemo.qualtifier.QualifierActivity
 import demo.dagger.com.daggerdemo.scopeone.ScopeOneActivity
@@ -64,6 +65,10 @@ class MainActivity : AppCompatActivity() {
 
         activity_main_binds_btn.setOnClickListener {
             startActivity<BindsActivity>()
+        }
+
+        activity_main_into_map_into_set_btn.setOnClickListener {
+            startActivity<IntoMapIntoSetActivity>()
         }
     }
 }

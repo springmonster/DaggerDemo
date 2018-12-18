@@ -13,7 +13,8 @@
     <string name="lazy">Lazy和Provider的使用</string>
     <string name="global">全局AppComponent的使用</string>
     <string name="binds">Binds的使用</string>
-    <string name="todo">todo</string>
+    <string name="intomap_intoset">IntoMap的使用</string>
+    <string name="todo">TODO</string>
 
     <!-- for test -->
     <string name="global_test">这就是从全局的AppComponent拿到的Resources</string>

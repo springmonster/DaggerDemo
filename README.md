@@ -41,6 +41,8 @@
 > 1.Lazy
 >
 > 2.Provider
+* IntoMap,IntoSet
+> package intomapintoset
 * 全局AppComponent和AppModule的使用
 > package global
 >

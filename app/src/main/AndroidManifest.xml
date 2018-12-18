@@ -45,6 +45,8 @@
         </activity>
         <activity android:name=".binds.BindsActivity">
         </activity>
+        <activity android:name=".intomapintoset.IntoMapIntoSetActivity">
+        </activity>
     </application>
 
 </manifest>
