@@ -38,17 +38,17 @@
 * Lazy
 > package lazy
 >
-> 1.Lazy
+> 1.@Lazy
 >
-> 2.Provider
-* IntoMap,IntoSet
+> 2.@Provider
+* @IntoMap,@IntoSet
 > package intomapintoset
 * 全局AppComponent和AppModule的使用
 > package global
 >
 > component之间采用了dependencies的方式
 #### TODO
-* Others(like @Binds...)
+* Others
 ## daggerandroiddemo文件夹[DaggerAndroid的Demo]
 #### TODO
 * DaggerAndroid的使用
