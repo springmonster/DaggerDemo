@@ -50,10 +50,8 @@
 #### TODO
 * Others
 ## daggerandroiddemo文件夹[DaggerAndroid的Demo]
-#### TODO
+#### Done
 * DaggerAndroid的使用
-#### PS
-* Dagger的说明文档谁看谁知道。。。
 ## jetpackapplication文件夹[JetPack的Demo]
 #### TODO
 * JetPack的使用，例如Navigation，DataBinding，LiveData，ViewModel
