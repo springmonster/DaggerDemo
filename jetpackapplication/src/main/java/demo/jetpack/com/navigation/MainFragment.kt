@@ -1,4 +1,4 @@
-package demo.jetpack.com.ui.fragment
+package demo.jetpack.com.navigation
 
 import android.net.Uri
 import android.os.Bundle

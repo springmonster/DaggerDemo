@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        >
+
+    <data>
+
+        <variable
+                name="user2"
+                type="demo.jetpack.com.binding.User2"/>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".binding.Binding2Activity">
+
+        <TextView
+                android:id="@+id/activity_binding_2_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(user2.age)}"/>
+
+        <Button
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_2_tv"
+                android:text="increase number"
+                android:id="@+id/activity_binding_2_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

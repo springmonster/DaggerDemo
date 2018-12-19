@@ -5,4 +5,5 @@
     <string name="fragment1">fragment1</string>
     <string name="fragment2">fragment2</string>
     <string name="fragment3">fragment3</string>
+    <string name="title_activity_binding">BindingActivity</string>
 </resources>
