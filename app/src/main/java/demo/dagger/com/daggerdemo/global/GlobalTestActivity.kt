@@ -3,7 +3,7 @@ package demo.dagger.com.daggerdemo.global
 import android.content.SharedPreferences
 import android.content.res.Resources
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import demo.dagger.com.daggerdemo.R
 import kotlinx.android.synthetic.main.activity_global_test.*
 import javax.inject.Inject

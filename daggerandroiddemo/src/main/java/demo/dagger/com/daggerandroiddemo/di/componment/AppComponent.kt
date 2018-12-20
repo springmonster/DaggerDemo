@@ -8,8 +8,6 @@ import dagger.android.support.AndroidSupportInjectionModule
 import demo.dagger.com.daggerandroiddemo.MyApp
 import demo.dagger.com.daggerandroiddemo.di.module.ActivityModule
 import demo.dagger.com.daggerandroiddemo.di.module.AppModule
-import demo.dagger.com.daggerandroiddemo.di.module.FragmentModule
-import demo.dagger.com.daggerandroiddemo.di.module.SecondActivityModule
 import javax.inject.Singleton
 
 @Singleton
@@ -18,9 +16,7 @@ import javax.inject.Singleton
     [AppModule::class,
         AndroidSupportInjectionModule::class,
         AndroidInjectionModule::class,
-        ActivityModule::class,
-        FragmentModule::class,
-        SecondActivityModule::class]
+        ActivityModule::class]
 )
 interface AppComponent {
     fun inject(myApp: MyApp)

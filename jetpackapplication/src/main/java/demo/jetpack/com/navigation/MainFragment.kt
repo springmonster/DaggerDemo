@@ -2,10 +2,10 @@ package demo.jetpack.com.navigation
 
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import demo.jetpack.com.R
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -25,7 +25,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class MainFragment : Fragment() {
+class MainFragment : androidx.fragment.app.Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null

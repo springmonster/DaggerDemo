@@ -6,4 +6,6 @@
     <string name="fragment2">fragment2</string>
     <string name="fragment3">fragment3</string>
     <string name="title_activity_binding">BindingActivity</string>
+
+    <string name="fragment_garden_empty">Empty Garden!</string>
 </resources>

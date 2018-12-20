@@ -1,7 +1,7 @@
 package demo.dagger.com.daggerdemo.scopeone
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import demo.dagger.com.daggerdemo.R
 import kotlinx.android.synthetic.main.activity_scope_one.*
 import javax.inject.Inject

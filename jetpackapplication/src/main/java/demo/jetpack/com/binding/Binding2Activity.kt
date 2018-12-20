@@ -1,8 +1,8 @@
 package demo.jetpack.com.binding
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import demo.jetpack.com.R
 import demo.jetpack.com.databinding.ActivityBinding2Binding
 import kotlinx.android.synthetic.main.activity_binding2.*

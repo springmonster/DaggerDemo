@@ -2,7 +2,7 @@ package demo.dagger.com.daggerdemo.extendcomponenttwo
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import demo.dagger.com.daggerdemo.R
 import kotlinx.android.synthetic.main.activity_extend_two_component.*
 import javax.inject.Inject

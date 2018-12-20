@@ -1,7 +1,7 @@
 package demo.dagger.com.daggerdemo.binds
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import demo.dagger.com.daggerdemo.R
 import kotlinx.android.synthetic.main.activity_binds.*
 import javax.inject.Inject

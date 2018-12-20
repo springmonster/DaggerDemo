@@ -3,7 +3,7 @@ package demo.dagger.com.daggerandroiddemo.base
 import android.content.SharedPreferences
 import android.content.res.Resources
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 

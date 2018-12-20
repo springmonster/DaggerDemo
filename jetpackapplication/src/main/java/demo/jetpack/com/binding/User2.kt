@@ -1,7 +1,7 @@
 package demo.jetpack.com.binding
 
-import android.databinding.ObservableField
-import android.databinding.ObservableInt
+import androidx.databinding.ObservableField
+import androidx.databinding.ObservableInt
 
 class User2 {
     val firstName = ObservableField<String>()

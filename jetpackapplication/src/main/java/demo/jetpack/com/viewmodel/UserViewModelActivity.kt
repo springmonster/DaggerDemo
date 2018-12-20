@@ -1,9 +1,9 @@
 package demo.jetpack.com.viewmodel
 
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import demo.jetpack.com.R
 import demo.jetpack.com.databinding.ActivityUserViewModelBinding
 import kotlinx.android.synthetic.main.activity_user_view_model.*
