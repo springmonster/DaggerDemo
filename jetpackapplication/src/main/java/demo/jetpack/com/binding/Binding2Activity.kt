@@ -16,12 +16,12 @@ class Binding2Activity : AppCompatActivity() {
         val activityBinding2Binding: ActivityBinding2Binding =
             DataBindingUtil.setContentView(this, R.layout.activity_binding2)
 
-        val user2 = User2()
+        val user2 = BindingObservableUser()
         user2.firstName.set("a")
         user2.lastName.set("a")
         user2.age.set(20)
 
-        activityBinding2Binding.user2 = user2
+        activityBinding2Binding.bindingObservableUser = user2
 
         activity_binding_2_btn.setOnClickListener {
             user2.age.set(user2.age.get() + 1)

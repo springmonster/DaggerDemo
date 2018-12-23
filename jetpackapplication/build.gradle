@@ -53,12 +53,11 @@ dependencies {
     kapt 'android.arch.persistence.room:compiler:1.0.0'
 
     // coroutines
-//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0'
-//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0'
 
-    def anko_version = "0.10.8"
     // anko
-    implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation "org.jetbrains.anko:anko-commons:0.10.7"
 
     // sqlscout
     debugImplementation 'com.idescout.sql:sqlscout-server:4.1'

@@ -45,5 +45,5 @@ dependencies {
     kapt 'com.google.dagger:dagger-android-processor:2.16'
 
     // anko
-    implementation "org.jetbrains.anko:anko-commons:0.10.8"
+    implementation "org.jetbrains.anko:anko-commons:0.10.7"
 }

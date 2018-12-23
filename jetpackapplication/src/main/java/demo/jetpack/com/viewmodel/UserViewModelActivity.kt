@@ -12,17 +12,6 @@ class UserViewModelActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_user_view_model)
-
-//        val userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-//        userViewModel.user.observe(this, Observer {
-//            activity_user_view_model_name_tv.text = it?.name
-//        })
-//
-//        activity_user_view_model_btn.setOnClickListener {
-//            val user = User("张三", 20, 1)
-//            userViewModel.user.value = user
-//        }
 
         val userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
         val binding =
@@ -31,7 +20,7 @@ class UserViewModelActivity : AppCompatActivity() {
         binding.setLifecycleOwner(this)
 
         activity_user_view_model_btn.setOnClickListener {
-            userViewModel.user.value = User("张三", 20, 1)
+            userViewModel.userVMEntity.value = UserVMEntity("张三", 20, 1)
         }
     }
 }

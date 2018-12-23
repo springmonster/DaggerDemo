@@ -8,8 +8,18 @@
         <import type="android.view.View"/>
 
         <variable
-                name="user"
-                type="demo.jetpack.com.binding.User"/>
+                name="bindingUser"
+                type="demo.jetpack.com.binding.BindingUser"/>
+
+        <variable
+                name="person"
+                type="demo.jetpack.com.binding.Person"/>
+
+        <variable
+                name="presenter"
+                type="demo.jetpack.com.binding.BindingActivity.Presenter"/>
+
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,36 +27,51 @@
             android:layout_height="match_parent"
             tools:context=".binding.BindingActivity">
 
+        <EditText
+                android:id="@+id/activity_binding_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onTextChanged="@{presenter::onTextChanged}"/>
+
         <TextView
                 android:id="@+id/activity_binding_tv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{user.name}"/>
+                android:onClick="@{presenter::onClick}"
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_et"
+                android:text="@{bindingUser.name}"/>
 
         <TextView
                 app:layout_constraintTop_toBottomOf="@id/activity_binding_tv1"
                 android:id="@+id/activity_binding_tv2"
                 android:layout_width="match_parent"
-                android:text="@{user.password}"
+                android:onClick="@{()->presenter.onClickListenerBinding(bindingUser)}"
+                android:text="@{bindingUser.password}"
                 android:layout_height="wrap_content"/>
 
         <TextView
                 app:layout_constraintTop_toBottomOf="@id/activity_binding_tv2"
                 android:id="@+id/activity_binding_tv3"
                 android:layout_width="match_parent"
-                android:text="@{String.valueOf(user.age)}"
+                android:text="@{String.valueOf(bindingUser.age)}"
                 android:layout_height="wrap_content"/>
 
         <TextView
                 app:layout_constraintTop_toBottomOf="@id/activity_binding_tv3"
                 android:id="@+id/activity_binding_tv4"
                 android:layout_width="match_parent"
-                android:text="hello world"
-                android:visibility="@{user.show?View.VISIBLE:View.INVISIBLE}"
+                android:text="@{person.name}"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv4"
+                android:id="@+id/activity_binding_tv5"
+                android:layout_width="match_parent"
+                android:text="@{String.valueOf(person.age)}"
                 android:layout_height="wrap_content"/>
 
         <Button
-                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv4"
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv5"
                 android:id="@+id/activity_binding_btn"
                 android:layout_width="match_parent"
                 android:text="jump to 2"

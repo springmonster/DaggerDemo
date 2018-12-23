@@ -4,5 +4,5 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class UserViewModel : ViewModel() {
-    val user = MutableLiveData<User>()
+    val userVMEntity = MutableLiveData<UserVMEntity>()
 }

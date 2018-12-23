@@ -7,8 +7,8 @@
     <data>
 
         <variable
-                name="user2"
-                type="demo.jetpack.com.binding.User2"/>
+                name="bindingObservableUser"
+                type="demo.jetpack.com.binding.BindingObservableUser"/>
 
     </data>
 
@@ -21,7 +21,7 @@
                 android:id="@+id/activity_binding_2_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(user2.age)}"/>
+                android:text="@{String.valueOf(bindingObservableUser.age)}"/>
 
         <Button
                 app:layout_constraintTop_toBottomOf="@id/activity_binding_2_tv"

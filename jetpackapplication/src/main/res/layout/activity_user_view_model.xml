@@ -20,14 +20,14 @@
                 android:id="@+id/activity_user_view_model_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{userViewModel.user.name}"/>
+                android:text="@{userViewModel.userVMEntity.name}"/>
 
         <TextView
                 app:layout_constraintTop_toBottomOf="@id/activity_user_view_model_name_tv"
                 android:id="@+id/activity_user_view_model_age_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(userViewModel.user.age)}"/>
+                android:text="@{String.valueOf(userViewModel.userVMEntity.age)}"/>
 
         <Button
                 app:layout_constraintTop_toBottomOf="@id/activity_user_view_model_age_tv"

@@ -18,6 +18,11 @@
                 android:name=".binding.BindingActivity"
                 android:label="@string/title_activity_binding"
                 android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".binding.Binding2Activity">
         </activity>
@@ -26,11 +31,13 @@
         <activity android:name=".viewmodel.UserViewModelActivity">
         </activity>
         <activity android:name=".room.RoomActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".JetpackStartActivity">
         </activity>
     </application>
 
