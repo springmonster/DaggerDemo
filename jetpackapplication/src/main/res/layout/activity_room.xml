@@ -11,13 +11,13 @@
             android:id="@+id/activity_room_query"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="添加"/>
+            android:text="查询"/>
 
     <Button
-            android:id="@+id/activity_room_insert"
+            android:id="@+id/activity_room_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="插入"
+            android:text="添加"
             app:layout_constraintTop_toBottomOf="@id/activity_room_query"/>
 
     <Button
@@ -25,7 +25,7 @@
             android:id="@+id/activity_room_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/activity_room_insert"/>
+            app:layout_constraintTop_toBottomOf="@id/activity_room_add"/>
 
     <Button
             android:text="删除"
