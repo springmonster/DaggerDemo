@@ -8,6 +8,7 @@ import demo.jetpack.com.R
 import demo.jetpack.com.binding.include.BindingIncludeActivity
 import demo.jetpack.com.binding.list.BindingListActivity
 import demo.jetpack.com.binding.observable.BindingObservableActivity
+import demo.jetpack.com.binding.twoway.TwoWayActivity
 import demo.jetpack.com.databinding.ActivityBindingSimpleBinding
 import kotlinx.android.synthetic.main.activity_binding_simple.*
 import org.jetbrains.anko.startActivity
@@ -36,6 +37,10 @@ class BindingSimpleActivity : AppCompatActivity() {
 
         activity_binding_list_btn.setOnClickListener {
             startActivity<BindingListActivity>()
+        }
+
+        activity_binding_two_way_btn.setOnClickListener {
+            startActivity<TwoWayActivity>()
         }
     }
 

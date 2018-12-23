@@ -79,5 +79,13 @@
                 android:layout_width="match_parent"
                 android:text="RecyclerView的Databinding"
                 android:layout_height="wrap_content"/>
+
+        <Button
+                app:layout_constraintBottom_toTopOf="@id/activity_binding_list_btn"
+                android:id="@+id/activity_binding_two_way_btn"
+                android:layout_width="match_parent"
+                android:text="双向绑定"
+                android:layout_height="wrap_content"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

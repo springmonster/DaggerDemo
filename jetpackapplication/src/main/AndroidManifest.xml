@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".binding.list.BindingListActivity">
         </activity>
+        <activity android:name=".binding.twoway.TwoWayActivity">
+        </activity>
     </application>
 
 </manifest>
