@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="bindingEmployee"
+                type="demo.jetpack.com.binding.observable.BindingEmployee"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".binding.observable.BindingObservableActivity">
+
+        <EditText
+                android:id="@+id/activity_binding_observable_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_observable_et"
+                android:id="@+id/activity_binding_tv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{bindingEmployee.firstName}"/>
+
+        <TextView
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv1"
+                android:id="@+id/activity_binding_tv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{bindingEmployee.lastName}"/>
+
+        <TextView
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv2"
+                android:id="@+id/activity_binding_tv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{bindingEmployee.map["A"]}'/>
+
+        <TextView
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv3"
+                android:id="@+id/activity_binding_tv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hello world"
+                android:visibility="@{bindingEmployee.visible?View.VISIBLE:View.GONE}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

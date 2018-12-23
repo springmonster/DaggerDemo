@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+                name="startEntity"
+                type="demo.jetpack.com.StartEntity"/>
+
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="10dp"
+            android:layout_margin="10dp">
+
+        <TextView
+                android:id="@+id/item_jetpack_layout_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="@{startEntity.title}"/>
+    </LinearLayout>
+</layout>

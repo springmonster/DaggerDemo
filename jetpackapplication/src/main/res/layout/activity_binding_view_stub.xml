@@ -3,14 +3,21 @@
         xmlns:tools="http://schemas.android.com/tools"
         >
 
-    <data class="BindingThree">
+    <data>
 
+        <variable
+                name="bindingUser"
+                type="demo.jetpack.com.binding.BindingUser"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".binding.Binding3Activity">
+            tools:context=".binding.BindingSimpleActivity">
 
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

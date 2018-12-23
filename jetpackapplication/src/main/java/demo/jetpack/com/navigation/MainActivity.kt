@@ -1,8 +1,9 @@
-package demo.jetpack.com
+package demo.jetpack.com.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
+import demo.jetpack.com.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -12,32 +12,29 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".navigation.MainActivity">
         </activity>
         <activity
-                android:name=".binding.BindingActivity"
+                android:name=".binding.BindingSimpleActivity"
                 android:label="@string/title_activity_binding"
                 android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".viewmodel.UserViewModelActivity">
+        </activity>
+        <activity android:name=".room.RoomActivity">
+        </activity>
+        <activity android:name=".JetpackStartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".binding.Binding2Activity">
+        <activity android:name=".binding.include.BindingIncludeActivity">
         </activity>
-        <activity android:name=".binding.Binding3Activity">
+        <activity android:name=".binding.observable.BindingObservableActivity">
         </activity>
-        <activity android:name=".viewmodel.UserViewModelActivity">
-        </activity>
-        <activity android:name=".room.RoomActivity">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN"/>-->
-
-            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
-        </activity>
-        <activity android:name=".JetpackStartActivity">
+        <activity android:name=".binding.list.BindingListActivity">
         </activity>
     </application>
 

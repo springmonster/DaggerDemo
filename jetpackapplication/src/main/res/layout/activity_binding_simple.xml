@@ -12,12 +12,8 @@
                 type="demo.jetpack.com.binding.BindingUser"/>
 
         <variable
-                name="person"
-                type="demo.jetpack.com.binding.Person"/>
-
-        <variable
                 name="presenter"
-                type="demo.jetpack.com.binding.BindingActivity.Presenter"/>
+                type="demo.jetpack.com.binding.BindingSimpleActivity.Presenter"/>
 
 
     </data>
@@ -25,7 +21,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".binding.BindingActivity">
+            tools:context=".binding.BindingSimpleActivity">
 
         <EditText
                 android:id="@+id/activity_binding_et"
@@ -56,25 +52,32 @@
                 android:text="@{String.valueOf(bindingUser.age)}"
                 android:layout_height="wrap_content"/>
 
-        <TextView
+        <ViewStub
                 app:layout_constraintTop_toBottomOf="@id/activity_binding_tv3"
-                android:id="@+id/activity_binding_tv4"
+                android:id="@+id/activity_binding_vs"
+                android:layout="@layout/activity_binding_view_stub"
                 android:layout_width="match_parent"
-                android:text="@{person.name}"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv4"
-                android:id="@+id/activity_binding_tv5"
-                android:layout_width="match_parent"
-                android:text="@{String.valueOf(person.age)}"
                 android:layout_height="wrap_content"/>
 
         <Button
-                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv5"
-                android:id="@+id/activity_binding_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/activity_binding_include_btn"
                 android:layout_width="match_parent"
-                android:text="jump to 2"
+                android:text="Include布局的Databinding"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                app:layout_constraintBottom_toTopOf="@id/activity_binding_include_btn"
+                android:id="@+id/activity_binding_observable_btn"
+                android:layout_width="match_parent"
+                android:text="Observable的Databinding"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                app:layout_constraintBottom_toTopOf="@id/activity_binding_observable_btn"
+                android:id="@+id/activity_binding_list_btn"
+                android:layout_width="match_parent"
+                android:text="RecyclerView的Databinding"
                 android:layout_height="wrap_content"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
