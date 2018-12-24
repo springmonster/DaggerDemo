@@ -1,1 +1,1 @@
-include ':app', ':daggerandroiddemo', ':jetpackapplication'
+include ':app', ':daggerandroiddemo', ':jetpackapplication', ':mocksunflower'

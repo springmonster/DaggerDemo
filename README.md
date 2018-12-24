@@ -68,3 +68,7 @@
 #### TODO
 * JetPack的使用，例如Navigation，DataBinding，LiveData，ViewModel
 * 实现使用Dagger框架的MVVM程序
+## MockSunFlowerDemo (mocksunflowerdemo项目)
+#### TODO
+* 模仿Google的SunFlower项目
+* 太多点没有明白。。。
