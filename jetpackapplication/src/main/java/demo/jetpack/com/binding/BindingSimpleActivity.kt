@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import demo.jetpack.com.R
+import demo.jetpack.com.binding.bindingadapter.BindingAdapterActivity
 import demo.jetpack.com.binding.include.BindingIncludeActivity
 import demo.jetpack.com.binding.list.BindingListActivity
 import demo.jetpack.com.binding.observable.BindingObservableActivity
@@ -41,6 +42,10 @@ class BindingSimpleActivity : AppCompatActivity() {
 
         activity_binding_two_way_btn.setOnClickListener {
             startActivity<TwoWayActivity>()
+        }
+
+        activity_binding_adapter_btn.setOnClickListener {
+            startActivity<BindingAdapterActivity>()
         }
     }
 

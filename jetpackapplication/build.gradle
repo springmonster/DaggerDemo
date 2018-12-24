@@ -62,4 +62,11 @@ dependencies {
     // sqlscout
     debugImplementation 'com.idescout.sql:sqlscout-server:4.1'
     releaseImplementation 'com.idescout.sql:sqlscout-server-noop:4.1'
+
+    // picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // dagger
+    compile 'com.google.dagger:dagger:2.19'
+    kapt 'com.google.dagger:dagger-compiler:2.19'
 }
