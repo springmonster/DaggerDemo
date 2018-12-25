@@ -69,4 +69,7 @@ dependencies {
 
     // gson
     implementation "com.google.code.gson:gson:2.8.2"
+
+    // core-ktx SpannableStringBuilder相关扩展？？？
+    implementation "androidx.core:core-ktx:1.0.1"
 }

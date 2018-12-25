@@ -5,8 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.sunflower.R
+import com.sunflower.databinding.FragmentPlantDetailBinding
+import com.sunflower.utils.InjectorUtil
+import com.sunflower.viewmodels.PlantDetailViewModel
+import com.sunflower.viewmodels.PlantDetailViewModelFactory
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +29,24 @@ class PlantDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_plant_detail, container, false)
+        val plantId = PlantDetailFragmentArgs.fromBundle(arguments ?: Bundle()).plantId
+
+        val factory: PlantDetailViewModelFactory =
+            InjectorUtil.providePlantDetailViewModelFactory(requireContext(), plantId)
+
+        val plantDetailViewModel = ViewModelProviders.of(this, factory).get(PlantDetailViewModel::class.java)
+
+        val binding = DataBindingUtil.inflate<FragmentPlantDetailBinding>(
+            inflater,
+            R.layout.fragment_plant_detail,
+            container,
+            false
+        ).apply {
+            viewModel = plantDetailViewModel
+            setLifecycleOwner(this@PlantDetailFragment)
+        }
+
+        return binding.root
     }
+
 }

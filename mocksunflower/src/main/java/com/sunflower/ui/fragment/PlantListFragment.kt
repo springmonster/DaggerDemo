@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sunflower.R
 import com.sunflower.data.PlantEntity
@@ -55,7 +56,9 @@ class PlantFragment : Fragment() {
         adapter = PlantAdapter()
         adapter.setItemClickListener(object : PlantAdapter.OnItemPlantClickListener {
             override fun onItemPlantClick(view: View, plantEntity: PlantEntity?) {
-                Navigation.findNavController(view).navigate(R.id.action_plantFragment_to_plantDetailFragment)
+                val navDirections =
+                    PlantFragmentDirections.actionPlantFragmentToPlantDetailFragment(plantEntity?.plantId ?: "")
+                view.findNavController().navigate(navDirections)
             }
         })
         viewModel.getPlants()?.observe(viewLifecycleOwner, Observer { it ->

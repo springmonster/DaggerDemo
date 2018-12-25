@@ -3,6 +3,7 @@ package com.sunflower.utils
 import android.content.Context
 import com.sunflower.data.AppDataBase
 import com.sunflower.data.PlantRepository
+import com.sunflower.viewmodels.PlantDetailViewModelFactory
 import com.sunflower.viewmodels.PlantListViewModelFactory
 
 object InjectorUtil {
@@ -15,5 +16,12 @@ object InjectorUtil {
      */
     fun providePlantListViewModelFactory(context: Context): PlantListViewModelFactory {
         return PlantListViewModelFactory(getPlantRepository(context))
+    }
+
+    /**
+     * 这里提供一个[PlantDetailViewModelFactory]
+     */
+    fun providePlantDetailViewModelFactory(context: Context, plantId: String): PlantDetailViewModelFactory {
+        return PlantDetailViewModelFactory(getPlantRepository(context), plantId)
     }
 }
