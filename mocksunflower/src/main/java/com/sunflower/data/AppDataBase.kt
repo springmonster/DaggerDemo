@@ -4,11 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.sunflower.worker.InitDatabaseWorker
 
-@Database(entities = [PlantEntity::class], version = 1, exportSchema = false)
+@Database(entities = [PlantEntity::class, MyGardenEntity::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class AppDataBase : RoomDatabase() {
+    abstract fun myGardenDao(): MyGardenDao
     abstract fun plantDao(): PlantDao
 
     companion object {

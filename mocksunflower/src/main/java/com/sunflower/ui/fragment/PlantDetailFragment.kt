@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.snackbar.Snackbar
 import com.sunflower.R
 import com.sunflower.databinding.FragmentPlantDetailBinding
 import com.sunflower.utils.InjectorUtil
@@ -44,6 +45,10 @@ class PlantDetailFragment : Fragment() {
         ).apply {
             viewModel = plantDetailViewModel
             setLifecycleOwner(this@PlantDetailFragment)
+            fab.setOnClickListener { view ->
+                plantDetailViewModel.addPlantToGarden()
+                Snackbar.make(view, R.string.added_plant_to_garden, Snackbar.LENGTH_LONG).show()
+            }
         }
 
         return binding.root

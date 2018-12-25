@@ -12,7 +12,8 @@
     </data>
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_detail_ll"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -29,6 +30,7 @@
 
         <TextView
                 android:id="@+id/plant_watering"
+                app:layout_constraintTop_toBottomOf="@id/plant_img"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
@@ -39,6 +41,7 @@
 
         <TextView
                 android:id="@+id/plant_detail"
+                app:layout_constraintTop_toBottomOf="@id/plant_watering"
                 style="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,5 +51,18 @@
                 android:textIsSelectable="true"
                 app:renderHtml="@{viewModel.plantEntity.description}"
                 tools:text="Details about the plant"/>
-    </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/fab"
+                style="@style/Widget.MaterialComponents.FloatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:tint="@android:color/white"
+                app:isGone="@{viewModel.isPlanted}"
+                app:srcCompat="@drawable/ic_plus"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
