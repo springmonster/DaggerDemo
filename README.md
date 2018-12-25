@@ -71,4 +71,16 @@
 ## MockSunFlowerDemo (mocksunflowerdemo项目)
 #### TODO
 * 模仿Google的SunFlower项目
-* 太多点没有明白。。。满满的恶意。。。
+#### 目前的疑惑点
+* ViewModel，LiveData，DataBinding的组合使用，生命周期？？？
+* Transformations是什么？？？
+* MediatorLiveData是什么？？？
+* ListAdapter的使用，DiffUtil的使用？？？
+* Room的联合查询，sunflower项目中有两个数据库表，通过plantId来作为foreignkey？？？
+* Room的API细化，例如Converters？？？
+* Coroutines的细化，比如sunflower项目中的数据库查询都是在UI线程，为什么？？？
+* WorkManager的细化，用Coroutines可不可以，为什么？？？
+* 如果使用Dagger Android，如何改造？？？
+* Navigation的覆盖back按键事件？？？
+* Navigation的跳转API有几种？？？
+* 用了DataBinding之后可以在View的代码层级（不是xml）不去手写R.layout，这样有什么规律，优点缺点是什么？？？
