@@ -24,6 +24,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/fragment_my_garden_show_all_plant"/>
 
+        <androidx.recyclerview.widget.RecyclerView
+                app:layout_constraintTop_toBottomOf="@id/fragment_my_garden_show_all_plant_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/fragment_my_garden_rv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
