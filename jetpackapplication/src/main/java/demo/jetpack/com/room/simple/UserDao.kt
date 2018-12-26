@@ -1,11 +1,12 @@
-package demo.jetpack.com.room
+package demo.jetpack.com.room.simple
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
 interface UserDao {
     @Query("SELECT * FROM userTable")
-    fun queryAllUsers(): List<UserEntity>
+    fun queryAllUsers(): LiveData<List<UserEntity>>
 
     @Query("SELECT * FROM userTable WHERE uid=:uid")
     fun queryUser(uid: Int): UserEntity

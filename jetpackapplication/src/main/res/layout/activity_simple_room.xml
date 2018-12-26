@@ -5,10 +5,24 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".room.RoomActivity">
+        tools:context=".room.simple.RoomSimpleActivity">
+
+    <EditText
+            android:id="@+id/activity_room_first_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="firstName"/>
+
+    <EditText
+            android:id="@+id/activity_room_last_et"
+            app:layout_constraintTop_toBottomOf="@id/activity_room_first_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="lastName"/>
 
     <Button
             android:id="@+id/activity_room_query"
+            app:layout_constraintTop_toBottomOf="@id/activity_room_last_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="查询"/>

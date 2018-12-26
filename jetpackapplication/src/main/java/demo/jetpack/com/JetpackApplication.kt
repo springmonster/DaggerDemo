@@ -2,7 +2,7 @@ package demo.jetpack.com
 
 import android.app.Application
 import androidx.room.Room
-import demo.jetpack.com.room.UserDatabase
+import demo.jetpack.com.room.simple.UserDatabase
 
 class JetpackApplication : Application() {
     companion object {

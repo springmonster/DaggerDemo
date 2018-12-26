@@ -79,6 +79,7 @@
 * Room的联合查询，sunflower项目中有两个数据库表，通过plantId来作为foreignkey？？？
 * Room的API细化，例如Converters？？？
 * Coroutines的细化，比如sunflower项目中的数据库查询都是在UI线程，为什么？？？
+(这个如果使用了LiveData包装查询出的数据，可以不必在IO线程去查询，猜测LiveData有切换线程的操作，需要继续调查)
 * WorkManager的细化，用Coroutines可不可以，为什么？？？
 * 如果使用Dagger Android，如何改造？？？
 * Navigation的覆盖back按键事件？？？

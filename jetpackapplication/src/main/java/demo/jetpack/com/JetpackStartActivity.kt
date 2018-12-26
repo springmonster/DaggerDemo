@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import demo.jetpack.com.binding.BindingSimpleActivity
 import demo.jetpack.com.databinding.ActivityJetpackStartBinding
 import demo.jetpack.com.navigation.MainActivity
-import demo.jetpack.com.room.RoomActivity
+import demo.jetpack.com.room.RoomStartActivity
 import demo.jetpack.com.viewmodel.UserViewModelActivity
 import kotlinx.android.synthetic.main.activity_jetpack_start.*
 
@@ -24,7 +24,7 @@ class JetpackStartActivity : AppCompatActivity() {
         val mutableList = mutableListOf(
             StartEntity("DataBinding", BindingSimpleActivity::class.java),
             StartEntity("Navigation", MainActivity::class.java),
-            StartEntity("Room", RoomActivity::class.java),
+            StartEntity("Room", RoomStartActivity::class.java),
             StartEntity("ViewModel", UserViewModelActivity::class.java)
         )
         val jetpackStartAdapter = JetpackStartAdapter(this)

@@ -9,7 +9,7 @@ import java.util.*
         entity = PlantEntity::class, parentColumns = ["id"],
         childColumns = ["plant_id"]
     )],
-    indices = [Index("plant_id")]
+    indices = [Index("plant_id")] // 这里是使用了索引
 )
 class MyGardenEntity(
     @ColumnInfo(name = "plant_id")
