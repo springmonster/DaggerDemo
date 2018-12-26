@@ -48,6 +48,22 @@
         </activity>
         <activity android:name=".lifecycle.LifeCycleActivity">
         </activity>
+        <activity
+                android:name=".livedata.LiveDataActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".livedata.mutablelivedata.MutableLiveDataActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".livedata.mediatorlivedata.MediatorLiveDataActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".livedata.map.TransformationMapActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".livedata.switchmap.TransformationSwitchMapActivity"
+                android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

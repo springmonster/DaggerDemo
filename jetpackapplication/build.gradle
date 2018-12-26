@@ -69,4 +69,7 @@ dependencies {
     // dagger
     compile 'com.google.dagger:dagger:2.19'
     kapt 'com.google.dagger:dagger-compiler:2.19'
+
+    // for livedata display
+    implementation 'com.elyeproj.libraries:loaderviewlibrary:1.5.0'
 }

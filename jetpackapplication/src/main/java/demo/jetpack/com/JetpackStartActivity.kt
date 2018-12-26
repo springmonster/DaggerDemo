@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import demo.jetpack.com.binding.BindingSimpleActivity
 import demo.jetpack.com.databinding.ActivityJetpackStartBinding
 import demo.jetpack.com.lifecycle.LifeCycleActivity
+import demo.jetpack.com.livedata.LiveDataActivity
 import demo.jetpack.com.navigation.MainActivity
 import demo.jetpack.com.room.RoomStartActivity
 import demo.jetpack.com.viewmodel.UserViewModelActivity
@@ -27,7 +28,8 @@ class JetpackStartActivity : AppCompatActivity() {
             StartEntity("Navigation", MainActivity::class.java),
             StartEntity("Room", RoomStartActivity::class.java),
             StartEntity("ViewModel", UserViewModelActivity::class.java),
-            StartEntity("LifeCycle", LifeCycleActivity::class.java)
+            StartEntity("LifeCycle", LifeCycleActivity::class.java),
+            StartEntity("LiveData", LiveDataActivity::class.java)
         )
         val jetpackStartAdapter = JetpackStartAdapter(this)
         jetpackStartAdapter.addAll(mutableList)
