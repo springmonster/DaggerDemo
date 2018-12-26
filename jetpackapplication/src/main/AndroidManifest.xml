@@ -46,6 +46,8 @@
         </activity>
         <activity android:name=".room.RoomStartActivity">
         </activity>
+        <activity android:name=".lifecycle.LifeCycleActivity">
+        </activity>
     </application>
 
 </manifest>
