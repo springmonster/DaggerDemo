@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import demo.jetpack.com.binding.BindingSimpleActivity
 import demo.jetpack.com.databinding.ActivityJetpackStartBinding
+import demo.jetpack.com.downloadmanager.DownloadManagerActivity
 import demo.jetpack.com.lifecycle.LifeCycleActivity
 import demo.jetpack.com.livedata.LiveDataActivity
 import demo.jetpack.com.navigation.MainActivity
@@ -29,7 +30,8 @@ class JetpackStartActivity : AppCompatActivity() {
             StartEntity("Room", RoomStartActivity::class.java),
             StartEntity("ViewModel", UserViewModelActivity::class.java),
             StartEntity("LifeCycle", LifeCycleActivity::class.java),
-            StartEntity("LiveData", LiveDataActivity::class.java)
+            StartEntity("LiveData", LiveDataActivity::class.java),
+            StartEntity("DownloadManager", DownloadManagerActivity::class.java)
         )
         val jetpackStartAdapter = JetpackStartAdapter(this)
         jetpackStartAdapter.addAll(mutableList)

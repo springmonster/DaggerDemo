@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:dpv="http://schemas.android.com/apk/res-auto"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".downloadmanager.DownloadManagerActivity">
+
+        <demo.jetpack.com.downloadmanager.DownloadProgressBar
+                dpv:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/dpv3"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center"
+                dpv:circleBackgroundColor="@android:color/darker_gray"
+                dpv:drawingColor="@color/red_dark_primary_color"
+                dpv:progressBackgroundColor="@android:color/darker_gray"
+                dpv:progressColor="@color/red_dark_primary_color"
+                dpv:progressDuration="2000"
+                dpv:resultDuration="5000"
+                dpv:circleRadius="48dp"
+                dpv:lineWidth="3dp"
+                dpv:strokeWidth="3dp"
+                tools:layout_editor_absoluteY="0dp"/>
+
+        <Button
+                dpv:layout_constraintTop_toBottomOf="@id/dpv3"
+                android:id="@+id/success_text_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp"
+                android:textSize="40sp"
+                android:text="Click to download"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

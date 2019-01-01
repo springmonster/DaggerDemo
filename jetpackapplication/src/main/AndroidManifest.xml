@@ -64,6 +64,8 @@
         <activity
                 android:name=".livedata.switchmap.TransformationSwitchMapActivity"
                 android:screenOrientation="portrait"/>
+        <activity android:name=".downloadmanager.DownloadManagerActivity">
+        </activity>
     </application>
 
 </manifest>
