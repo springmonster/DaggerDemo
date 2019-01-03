@@ -18,4 +18,7 @@
     <color name="green_primary_color">#4CAF50</color>
     <color name="green_light_primary_color">#C8E6C9</color>
     <color name="green_text_icon_color">#FFFFFF</color>
+
+    <color name="red_download_progress_bar">#F20C32</color>
+    <color name="grey_download_progress_bar">#D8D8D8</color>
 </resources>

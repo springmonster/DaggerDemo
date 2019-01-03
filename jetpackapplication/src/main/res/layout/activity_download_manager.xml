@@ -11,30 +11,32 @@
 
         <demo.jetpack.com.downloadmanager.DownloadProgressBar
                 dpv:layout_constraintTop_toTopOf="parent"
+                dpv:layout_constraintLeft_toLeftOf="parent"
+                dpv:layout_constraintRight_toRightOf="parent"
                 android:id="@+id/dpv3"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:layout_gravity="center"
-                dpv:circleBackgroundColor="@android:color/darker_gray"
-                dpv:drawingColor="@color/red_dark_primary_color"
-                dpv:progressBackgroundColor="@android:color/darker_gray"
-                dpv:progressColor="@color/red_dark_primary_color"
-                dpv:progressDuration="2000"
-                dpv:resultDuration="5000"
+                dpv:backgroundColor="@android:color/darker_gray"
+                dpv:drawingColor="@color/red_download_progress_bar"
                 dpv:circleRadius="48dp"
-                dpv:lineWidth="3dp"
-                dpv:strokeWidth="3dp"
-                tools:layout_editor_absoluteY="0dp"/>
+                dpv:strokeWidth="3dp"/>
 
         <Button
                 dpv:layout_constraintTop_toBottomOf="@id/dpv3"
-                android:id="@+id/success_text_btn"
-                android:layout_width="wrap_content"
+                android:id="@+id/download_btn_start"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="48dp"
-                android:textSize="40sp"
-                android:text="Click to download"/>
+                android:text="Click to start"/>
+
+        <Button
+                dpv:layout_constraintTop_toBottomOf="@id/download_btn_start"
+                android:id="@+id/download_btn_end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Click to stop"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
