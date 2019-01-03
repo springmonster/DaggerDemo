@@ -5,6 +5,8 @@ import android.os.Handler
 import android.os.Message
 import androidx.appcompat.app.AppCompatActivity
 import demo.jetpack.com.R
+import demo.jetpack.com.R.id.download_btn_end
+import demo.jetpack.com.R.id.download_btn_start
 import kotlinx.android.synthetic.main.activity_download_manager.*
 
 

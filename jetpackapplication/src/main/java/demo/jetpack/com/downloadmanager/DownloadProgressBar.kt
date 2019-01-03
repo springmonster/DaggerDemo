@@ -10,8 +10,16 @@ import android.view.View
 import demo.jetpack.com.R
 
 class DownloadProgressBar : View {
+
+    private enum class State {
+        IDLE, LOADING
+    }
+
     private lateinit var mBackgroundPaint: Paint
     private lateinit var mDrawingPaint: Paint
+
+    private lateinit var mLoadingAnimation: ValueAnimator
+    private lateinit var mCircleBounds: RectF
 
     private var mCircleRadius: Float = 0.toFloat()
     private var mStrokeWidth: Float = 0.toFloat()
@@ -25,25 +33,18 @@ class DownloadProgressBar : View {
     private var mBackgroundColor: Int = 0
     private var mDrawingColor: Int = 0
 
-    private lateinit var mLoadingAnimation: ValueAnimator
-
-    private lateinit var mCircleBounds: RectF
-
     private var mFromArc = 0f
     private var mToArc = 0f
-    private var mCurrentProgressValue: Float = 0.toFloat()
+    private var mProgressValue: Float = 0.toFloat()
 
     private var mState = State.IDLE
-
-    private enum class State {
-        IDLE, LOADING
-    }
 
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         initAttrs(context, attrs)
-        init()
+        initPaints()
+        initAnimation()
     }
 
     private fun initAttrs(context: Context, attrs: AttributeSet) {
@@ -59,7 +60,7 @@ class DownloadProgressBar : View {
         }
     }
 
-    private fun init() {
+    private fun initPaints() {
         mBackgroundPaint = Paint()
         mBackgroundPaint.flags = Paint.ANTI_ALIAS_FLAG
         mBackgroundPaint.style = Paint.Style.STROKE
@@ -71,8 +72,14 @@ class DownloadProgressBar : View {
         mDrawingPaint.style = Paint.Style.STROKE
         mDrawingPaint.color = mDrawingColor
         mDrawingPaint.strokeWidth = mStrokeWidth
+    }
 
-        setupAnimations()
+    private fun initAnimation() {
+        mLoadingAnimation = ValueAnimator.ofFloat(mFromArc, mToArc)
+        mLoadingAnimation.addUpdateListener { valueAnimator ->
+            mProgressValue = valueAnimator.animatedValue as Float
+            invalidate()
+        }
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -90,17 +97,14 @@ class DownloadProgressBar : View {
         mCircleBounds.right = w / 2f + mCircleRadius
     }
 
-    private fun setupAnimations() {
-        mLoadingAnimation = ValueAnimator.ofFloat(mFromArc, mToArc)
-        mLoadingAnimation.addUpdateListener { valueAnimator ->
-            mCurrentProgressValue = valueAnimator.animatedValue as Float
-            invalidate()
-        }
-        mLoadingAnimation.start()
-    }
-
     private fun drawArrow(canvas: Canvas, drawingPaint: Paint) {
-        canvas.drawLine(mCenterX, mCenterY - mCircleRadius / 2, mCenterX, mCenterY + mCircleRadius / 2, drawingPaint)
+        canvas.drawLine(
+            mCenterX,
+            mCenterY - mCircleRadius / 2,
+            mCenterX,
+            mCenterY + mCircleRadius / 2,
+            drawingPaint
+        )
 
         canvas.drawLine(
             mCenterX - mCircleRadius / 2,
@@ -128,11 +132,9 @@ class DownloadProgressBar : View {
         canvas.drawCircle(mCenterX, mCenterY, mCircleRadius, mBackgroundPaint)
 
         when (mState) {
-            State.IDLE -> {
-                drawArrow(canvas, mBackgroundPaint)
-            }
+            State.IDLE -> drawArrow(canvas, mBackgroundPaint)
             State.LOADING -> {
-                canvas.drawArc(mCircleBounds, -90f, mCurrentProgressValue, false, mDrawingPaint)
+                canvas.drawArc(mCircleBounds, -90f, mProgressValue, false, mDrawingPaint)
                 drawArrow(canvas, mDrawingPaint)
             }
         }
@@ -151,13 +153,13 @@ class DownloadProgressBar : View {
         mLoadingAnimation.setFloatValues(mFromArc, mToArc)
         mLoadingAnimation.start()
         mFromArc = mToArc
-        invalidate()
     }
 
     fun stopLoading() {
         mFromArc = 0f
         mToArc = 0f
         mState = State.IDLE
+        mLoadingAnimation.cancel()
         invalidate()
     }
 }
