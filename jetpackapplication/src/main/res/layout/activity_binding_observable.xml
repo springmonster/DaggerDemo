@@ -7,6 +7,8 @@
 
         <import type="android.view.View"/>
 
+        <import type="androidx.databinding.ObservableList"/>
+
         <variable
                 name="bindingEmployee"
                 type="demo.jetpack.com.binding.observable.BindingEmployee"/>
@@ -14,6 +16,14 @@
         <variable
                 name="bindingPerson"
                 type="demo.jetpack.com.binding.observable.BindingPerson"/>
+
+        <variable
+                name="bindingListTestEntity"
+                type="demo.jetpack.com.binding.observable.BindingListTestEntity"/>
+
+        <variable
+                name="list"
+                type="ObservableList&lt;String&gt;"/>
 
     </data>
 
@@ -69,5 +79,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="hello world"/>
+
+        <TextView
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_btn"
+                android:id="@+id/activity_binding_tv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{list[list.size-1]}"/>
+
+        <Button
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv5"
+                android:id="@+id/activity_binding_btn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="list test"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

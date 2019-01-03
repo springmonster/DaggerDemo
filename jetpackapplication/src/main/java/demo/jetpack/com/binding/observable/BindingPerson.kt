@@ -10,5 +10,4 @@ data class BindingPerson(
     val text1: MutableLiveData<String>,
     val text2: MutableLiveData<String>,
     val text3: MutableLiveData<String>
-) {
-}
+)

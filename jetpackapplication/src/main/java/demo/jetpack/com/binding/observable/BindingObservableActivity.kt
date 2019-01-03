@@ -3,8 +3,10 @@ package demo.jetpack.com.binding.observable
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableArrayMap
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -58,13 +60,44 @@ class BindingObservableActivity : AppCompatActivity() {
 
         binding.bindingPerson = BindingPerson(text, text1, text2, text3)
 
-        binding.setLifecycleOwner(this)
-
         binding.bindingPerson?.text?.observe(this, Observer {
         })
-        
+
         activity_binding_btn.setOnClickListener {
             binding.bindingPerson?.text?.value = "hello world 1"
         }
+
+        val stringList0 = mutableListOf<String>("a", "b", "c")
+        val bindingListTestEntity = BindingListTestEntity()
+        val liveData = bindingListTestEntity.list
+        liveData?.value = stringList0
+
+        binding.bindingListTestEntity = bindingListTestEntity
+
+        val ob = ObservableArrayList<String>()
+        ob.add("a")
+        ob.add("b")
+        ob.add("c")
+
+        activity_binding_btn1.setOnClickListener {
+//            Log.d("khch", binding.bindingListTestEntity?.list?.value.toString())
+//            stringList0.add("c")
+//            stringList0.add("d")
+//            stringList0.add("e")
+//            binding.bindingListTestEntity?.list?.value = stringList0
+//            Log.d("khch", binding.bindingListTestEntity?.list?.value.toString())
+
+            ob.add("d")
+            ob.add("e")
+            ob.add("f")
+        }
+
+        binding.bindingListTestEntity?.list?.observe(this, Observer {
+            Log.d("khch", "observer list is " + binding.bindingListTestEntity?.list?.value.toString())
+        })
+
+        binding.list = ob
+
+        binding.setLifecycleOwner(this)
     }
 }
