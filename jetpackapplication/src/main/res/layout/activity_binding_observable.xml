@@ -11,6 +11,10 @@
                 name="bindingEmployee"
                 type="demo.jetpack.com.binding.observable.BindingEmployee"/>
 
+        <variable
+                name="bindingPerson"
+                type="demo.jetpack.com.binding.observable.BindingPerson"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -51,5 +55,19 @@
                 android:layout_height="wrap_content"
                 android:text="hello world"
                 android:visibility="@{bindingEmployee.visible?View.VISIBLE:View.GONE}"/>
+
+        <TextView
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv4"
+                android:id="@+id/activity_binding_tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{bindingPerson.text}"/>
+
+        <Button
+                app:layout_constraintTop_toBottomOf="@id/activity_binding_tv5"
+                android:id="@+id/activity_binding_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hello world"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
