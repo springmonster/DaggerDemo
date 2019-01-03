@@ -3,6 +3,14 @@
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+                name="hasPlantings"
+                type="boolean"/>
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,7 +37,16 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/fragment_my_garden_rv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"/>
+                android:layout_height="0dp"
+                app:isGone="@{!hasPlantings}"/>
 
+        <TextView
+                android:id="@+id/empty_garden"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/garden_empty"
+                android:textSize="24sp"
+                app:isGone="@{hasPlantings}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

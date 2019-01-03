@@ -5,14 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sunflower.R
 import com.sunflower.data.PlantEntity
 import com.sunflower.databinding.FragmentPlantListBinding
 import com.sunflower.ui.adapter.PlantAdapter
@@ -20,14 +18,13 @@ import com.sunflower.utils.InjectorUtil
 import com.sunflower.viewmodels.PlantListViewModel
 import kotlinx.android.synthetic.main.fragment_plant_list.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
- *
+ * 这里使用了 https://developer.android.google.cn/topic/libraries/data-binding/expressions
+ * 中的
+ * val listItemBinding = ListItemBinding.inflate(layoutInflater, viewGroup, false)
+ * or
+ * val listItemBinding = DataBindingUtil.inflate(layoutInflater, R.layout.list_item, viewGroup, false)
  */
 class PlantFragment : Fragment() {
     private lateinit var viewModel: PlantListViewModel
@@ -37,12 +34,7 @@ class PlantFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentPlantListBinding>(
-            inflater,
-            R.layout.fragment_plant_list,
-            container,
-            false
-        )
+        val binding = FragmentPlantListBinding.inflate(inflater, container, false)
         val context = context ?: return binding.root
         val factory = InjectorUtil.providePlantListViewModelFactory(context)
         viewModel = ViewModelProviders.of(this, factory).get(PlantListViewModel::class.java)

@@ -1,6 +1,7 @@
 package demo.jetpack.com.downloadmanager
 
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
@@ -47,6 +48,7 @@ class DownloadProgressBar : View {
         initAnimation()
     }
 
+    @SuppressLint("CustomViewStyleable")
     private fun initAttrs(context: Context, attrs: AttributeSet) {
         val array = context.obtainStyledAttributes(attrs, R.styleable.DownloadProgressView, 0, 0)
         try {
@@ -159,7 +161,6 @@ class DownloadProgressBar : View {
         mFromArc = 0f
         mToArc = 0f
         mState = State.IDLE
-        mLoadingAnimation.cancel()
         invalidate()
     }
 }

@@ -13,22 +13,19 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sunflower.R
 import com.sunflower.databinding.FragmentMyGardenBinding
-import com.sunflower.ui.adapter.MyGardenAdapter
+import com.sunflower.ui.adapter.MyGardenAdapterWithListAdapterAndDiffUtils
 import com.sunflower.utils.InjectorUtil
 import com.sunflower.viewmodels.MyGardenListViewModel
 import kotlinx.android.synthetic.main.fragment_my_garden.*
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
  *
  */
 class MyGardenFragment : Fragment() {
-    private lateinit var adapter: MyGardenAdapter
+//    private lateinit var adapter: MyGardenAdapter
+
+    private lateinit var adapter: MyGardenAdapterWithListAdapterAndDiffUtils
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,10 +45,18 @@ class MyGardenFragment : Fragment() {
             false
         )
 
-        adapter = MyGardenAdapter()
+//        adapter = MyGardenAdapter()
 
-        viewModel.plantsInGarden.observe(this, Observer {
-            adapter.addAll(it)
+//        viewModel.plantsInGarden.observe(this, Observer {
+//            adapter.addAll(it)
+//        })
+
+        adapter = MyGardenAdapterWithListAdapterAndDiffUtils()
+        viewModel.plantsInGarden.observe(this, Observer { plants ->
+            binding.hasPlantings = (plants != null && plants.isNotEmpty())
+            if (plants != null && plants.isNotEmpty()) {
+                adapter.submitList(plants)
+            }
         })
         return binding.root
     }

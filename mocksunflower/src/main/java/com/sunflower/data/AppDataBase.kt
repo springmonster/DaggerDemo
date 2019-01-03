@@ -6,7 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.sunflower.worker.InitDatabaseWorker
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import com.sunflower.worker.SeedDatabaseWorker
 
 @Database(entities = [PlantEntity::class, MyGardenEntity::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
@@ -35,7 +37,10 @@ abstract class AppDataBase : RoomDatabase() {
             ).addCallback(object : Callback() {
                 override fun onCreate(db: SupportSQLiteDatabase) {
                     super.onCreate(db)
-                    InitDatabaseWorker().initDatabaseInBackground(context)
+//                    InitDatabaseWorker().initDatabaseInBackground(context)
+
+                    val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
+                    WorkManager.getInstance().enqueue(request)
                 }
             }).build()
         }

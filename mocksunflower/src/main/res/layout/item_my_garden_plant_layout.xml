@@ -9,11 +9,16 @@
                 name="garden"
                 type="com.sunflower.data.MyGardenEntity"/>
 
+        <variable
+                name="clickListener"
+                type="android.view.View.OnClickListener"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:onClick="@{clickListener}">
 
         <!--<ImageView-->
         <!--android:id="@+id/item_my_garden_plant_item_image"-->
