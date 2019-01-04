@@ -1,8 +1,8 @@
-//noinspection GradleDependency
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
 
@@ -32,7 +32,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+//    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
@@ -40,7 +41,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
     // navigation
-    def nav_version = "1.0.0-alpha08"
+    def nav_version = "1.0.0-alpha09"
 
     implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version" // use -ktx for Kotlin
     implementation "android.arch.navigation:navigation-ui-ktx:$nav_version" // use -ktx for Kotlin
@@ -50,8 +51,8 @@ dependencies {
     kapt "androidx.lifecycle:lifecycle-compiler:2.0.0"
 
     // room
-    implementation 'android.arch.persistence.room:runtime:1.1.0'
-    kapt 'android.arch.persistence.room:compiler:1.1.0'
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    kapt 'android.arch.persistence.room:compiler:1.1.1'
 
     // coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0'
@@ -73,4 +74,7 @@ dependencies {
 
     // for livedata display
     implementation 'com.elyeproj.libraries:loaderviewlibrary:1.5.0'
+
+    // permission
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
 }

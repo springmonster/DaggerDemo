@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import demo.jetpack.com.R.id.activity_jetpack_start_rv
 import demo.jetpack.com.binding.BindingSimpleActivity
 import demo.jetpack.com.databinding.ActivityJetpackStartBinding
 import demo.jetpack.com.downloadmanager.DownloadManagerActivity
