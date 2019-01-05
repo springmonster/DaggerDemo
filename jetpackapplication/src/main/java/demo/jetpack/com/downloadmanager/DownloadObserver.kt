@@ -32,9 +32,6 @@ class DownloadObserver
                 if (totalBytes != 0L) {
                     if (lastProgressInt != progressInt) {
                         lastProgressInt = progressInt
-                        Log.d("Download", "curBytes==$curBytes")
-                        Log.d("Download", "totalBytes==$totalBytes")
-                        Log.d("Download", "mProgress------->$progressInt")
                         downloadProgress.onProgressChanged(progressInt)
                     }
                 }
@@ -44,13 +41,6 @@ class DownloadObserver
         } finally {
             cursor?.close()
         }
-    }
-
-    companion object {
-
-        val CURBYTES = "curBytes"
-        val TOTALBYTES = "totalBytes"
-        val PROGRESS = "progress"
     }
 
     interface DownloadProgress {

@@ -6,6 +6,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 
+/**
+ * @author Charles.Kuang
+ */
 class DownloadReceiver() : BroadcastReceiver() {
     var mDownloadListener:DownloadListener? = null
 

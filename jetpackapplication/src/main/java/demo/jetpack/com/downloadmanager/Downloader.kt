@@ -10,12 +10,12 @@ import demo.jetpack.com.JetpackApplication
 /**
  * @author Charles.Kuang
  */
-class DownloadService(private val mProgressInt: MutableLiveData<Int>) {
+class Downloader(private val mProgressInt: MutableLiveData<Int>) {
     companion object {
-        val DOWNLOAD_DIRECTORY = Environment.DIRECTORY_DOWNLOADS + "/Sapp"
+        private val DOWNLOAD_DIRECTORY = Environment.DIRECTORY_DOWNLOADS + "/Sapp"
     }
 
-    lateinit var downloadObserver: DownloadObserver
+    private lateinit var downloadObserver: DownloadObserver
 
     fun startDownload(url: String): Long {
         if (url.isBlank()) {
@@ -28,7 +28,7 @@ class DownloadService(private val mProgressInt: MutableLiveData<Int>) {
 
         val request = DownloadManager.Request(Uri.parse(url))
 
-//        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN)
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN)
 
         request.setDestinationInExternalPublicDir(DOWNLOAD_DIRECTORY, "hello.pdf")
 

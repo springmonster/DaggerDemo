@@ -13,13 +13,15 @@ import org.jetbrains.anko.alert
 import org.jetbrains.anko.noButton
 import org.jetbrains.anko.yesButton
 
-
+/**
+ * @author Charles.Kuang
+ */
 class DownloadManagerActivity : AppCompatActivity() {
     var progressInt = 0
-    lateinit var downloadProgressView: DownloadProgressBar
-    lateinit var rxPermissions: RxPermissions
-    lateinit var downloadReceiver: DownloadReceiver
-    lateinit var binding: ActivityDownloadManagerBinding
+    private lateinit var downloadProgressView: DownloadProgressBar
+    private lateinit var rxPermissions: RxPermissions
+    private lateinit var downloadReceiver: DownloadReceiver
+    private lateinit var binding: ActivityDownloadManagerBinding
 
     companion object {
         private const val REQUEST_CODE_GET_IMAGE = 1
@@ -29,14 +31,14 @@ class DownloadManagerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_download_manager)
 
-        downloadProgressView = findViewById(R.id.download_progress_view)
+        rxPermissions = RxPermissions(this)
 
         val downloadViewModel = DownloadViewModel()
         binding = ActivityDownloadManagerBinding.inflate(layoutInflater)
         binding.vm = downloadViewModel
         binding.vm!!.isDownloadCompleted.observe(this, Observer {
             if (it) {
-                downloadProgressView.stopLoading()
+                download_progress_view.stopLoading()
                 alert("Download file is /Download/hello.pdf", "Download") {
                     yesButton {}
                     noButton {}
@@ -44,17 +46,15 @@ class DownloadManagerActivity : AppCompatActivity() {
             }
         })
         binding.vm!!.progressInt.observe(this, Observer {
-            downloadProgressView.setProgress(it)
+            download_progress_view.setProgress(it)
         })
-
-        downloadReceiver = DownloadReceiver(downloadViewModel)
-        downloadReceiver.register(this)
-
-        rxPermissions = RxPermissions(this)
 
         download_btn_start.setOnClickListener {
             startDownload()
         }
+
+        downloadReceiver = DownloadReceiver(downloadViewModel)
+        downloadReceiver.register(this)
     }
 
     override fun onDestroy() {
@@ -67,7 +67,7 @@ class DownloadManagerActivity : AppCompatActivity() {
         rxPermissions
             .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
             .subscribe { granted ->
-                if (granted) { // Always true pre-M
+                if (granted) {
                     binding.vm!!.startDownload()
                 } else {
                 }

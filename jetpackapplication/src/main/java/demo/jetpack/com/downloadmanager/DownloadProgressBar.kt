@@ -11,26 +11,24 @@ import android.util.Log
 import android.view.View
 import demo.jetpack.com.R
 
+/**
+ * @author Charles.Kuang
+ */
 class DownloadProgressBar : View {
-
-    private enum class State {
-        IDLE, LOADING
-    }
-
     private lateinit var mBackgroundPaint: Paint
     private lateinit var mDrawingPaint: Paint
 
     private lateinit var mLoadingAnimation: ValueAnimator
     private lateinit var mCircleBounds: RectF
 
-    private var mCircleRadius: Float = 0.toFloat()
-    private var mStrokeWidth: Float = 0.toFloat()
-    private var mLengthFix: Float = 0.toFloat()
+    private var mCircleRadius: Float = 0f
+    private var mStrokeWidth: Float = 0f
+    private var mLengthFix: Float = 0f
 
-    private var mCenterX: Float = 0.toFloat()
-    private var mCenterY: Float = 0.toFloat()
-    private var mPaddingX: Float = 0.toFloat()
-    private var mPaddingY: Float = 0.toFloat()
+    private var mCenterX: Float = 0f
+    private var mCenterY: Float = 0f
+    private var mPaddingX: Float = 0f
+    private var mPaddingY: Float = 0f
 
     private var mBackgroundColor: Int = 0
     private var mDrawingColor: Int = 0
@@ -47,6 +45,7 @@ class DownloadProgressBar : View {
         initAttrs(context, attrs)
         initPaints()
         initAnimation()
+        invalidate()
     }
 
     @SuppressLint("CustomViewStyleable")
@@ -143,17 +142,10 @@ class DownloadProgressBar : View {
         }
     }
 
-//    fun startLoading() {
-//        mState = State.LOADING
-//        invalidate()
-//    }
-
     fun setProgress(value: Int) {
-        if (value < 0 || value > 100) {
+        if (value <= 0 || value > 100) {
             return
         }
-        Log.d("khch", "this is loading value " + value)
-
         if (mState != State.LOADING) {
             mState = State.LOADING
         }
@@ -164,10 +156,13 @@ class DownloadProgressBar : View {
     }
 
     fun stopLoading() {
-        Log.d("khch", "this is stop loading")
         mFromArc = 0f
         mToArc = 0f
         mState = State.IDLE
         invalidate()
+    }
+
+    private enum class State {
+        IDLE, LOADING
     }
 }
