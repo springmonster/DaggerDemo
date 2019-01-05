@@ -7,14 +7,21 @@ import demo.jetpack.com.room.simple.UserDatabase
 class JetpackApplication : Application() {
     companion object {
         private lateinit var userDatabase: UserDatabase
+        private lateinit var application: Application
 
         fun getUserDatabase(): UserDatabase {
             return userDatabase
+        }
+
+        fun getApplicaiton(): Application {
+            return application
         }
     }
 
     override fun onCreate() {
         super.onCreate()
+
+        application = this
 
         userDatabase = Room.databaseBuilder(
             this,

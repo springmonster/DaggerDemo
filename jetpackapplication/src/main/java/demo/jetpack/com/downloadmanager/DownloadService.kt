@@ -1,70 +1,68 @@
 package demo.jetpack.com.downloadmanager
 
 import android.app.DownloadManager
-import android.content.Context
 import android.content.Context.DOWNLOAD_SERVICE
 import android.net.Uri
 import android.os.Environment
-import android.os.Handler
-import android.os.Message
+import androidx.lifecycle.MutableLiveData
+import demo.jetpack.com.JetpackApplication
 
 /**
  * @author Charles.Kuang
  */
-class DownloadService {
+class DownloadService(private val mProgressInt: MutableLiveData<Int>) {
     companion object {
-        //        val url = "https://qd.myapp.com/myapp/qqteam/AndroidQQ/mobileqq_android.apk"
-        val DOWNLOAD_TYPE = "application/vnd.android.package-archive"
+        val DOWNLOAD_DIRECTORY = Environment.DIRECTORY_DOWNLOADS + "/Sapp"
     }
 
-    fun startDownload(context: Context, handler: Handler, url: String) {
+    lateinit var downloadObserver: DownloadObserver
+
+    fun startDownload(url: String): Long {
         if (url.isBlank()) {
-            return
+            return -1
         }
 
-        val downloadManager = context.applicationContext.getSystemService(DOWNLOAD_SERVICE) as DownloadManager
+        if (!ensureDirectoryExist(DOWNLOAD_DIRECTORY)) {
+            return -1
+        }
 
         val request = DownloadManager.Request(Uri.parse(url))
 
-        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE or DownloadManager.Request.NETWORK_WIFI)
+//        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_HIDDEN)
 
-        val dirType = Environment.DIRECTORY_DOWNLOADS + "/Sapp"
+        request.setDestinationInExternalPublicDir(DOWNLOAD_DIRECTORY, "hello.pdf")
 
-        ensureDirTypeExists(dirType)
+        val downloadManager = JetpackApplication.getApplicaiton().getSystemService(DOWNLOAD_SERVICE) as DownloadManager
 
-        request.setDestinationInExternalPublicDir(dirType, "Sapp.apk")
+        val downloadId = downloadManager.enqueue(request)
 
-        val id = downloadManager.enqueue(request)
+        downloadObserver = DownloadObserver(
+            downloadManager,
+            downloadId,
+            object : DownloadObserver.DownloadProgress {
+                override fun onProgressChanged(progressInt: Int) {
+                    mProgressInt.postValue(progressInt)
+                }
+            })
 
-        val message = Message()
-        message.what = 1
-
-        handler.sendMessage(message)
-
-        val downloadObserver = DownloadObserver(handler, downloadManager, id)
-
-        context.contentResolver.registerContentObserver(
+        JetpackApplication.getApplicaiton().contentResolver.registerContentObserver(
             Uri.parse("content://downloads/"),
             true, downloadObserver
         )
+
+        return downloadId
     }
 
-    fun isUrlEmpty(url: String?): Boolean {
-        return url.isNullOrBlank()
-    }
-
-    private fun ensureDirTypeExists(dirType: String) {
+    private fun ensureDirectoryExist(dirType: String): Boolean {
         val file = Environment.getExternalStoragePublicDirectory(dirType)
-        if (file == null) {
-            throw IllegalStateException("Failed to get external storage public directory")
-        } else if (file.exists()) {
-            if (!file.isDirectory) {
-                throw IllegalStateException(file.absolutePath + " already exists and is not a directory")
-            }
-        } else {
-            if (!file.mkdirs()) {
-                throw IllegalStateException("Unable to create directory: " + file.absolutePath)
-            }
+        return when {
+            file == null -> false
+            file.exists() -> file.isDirectory
+            else -> file.mkdirs()
         }
+    }
+
+    fun unregisterContentObserver() {
+        JetpackApplication.getApplicaiton().contentResolver.unregisterContentObserver(downloadObserver)
     }
 }

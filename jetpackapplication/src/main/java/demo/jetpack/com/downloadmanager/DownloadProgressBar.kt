@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.util.Log
 import android.view.View
 import demo.jetpack.com.R
 
@@ -142,14 +143,19 @@ class DownloadProgressBar : View {
         }
     }
 
-    fun startLoading() {
-        mState = State.LOADING
-        invalidate()
-    }
+//    fun startLoading() {
+//        mState = State.LOADING
+//        invalidate()
+//    }
 
     fun setProgress(value: Int) {
         if (value < 0 || value > 100) {
             return
+        }
+        Log.d("khch", "this is loading value " + value)
+
+        if (mState != State.LOADING) {
+            mState = State.LOADING
         }
         mToArc = value * 3.6f
         mLoadingAnimation.setFloatValues(mFromArc, mToArc)
@@ -158,6 +164,7 @@ class DownloadProgressBar : View {
     }
 
     fun stopLoading() {
+        Log.d("khch", "this is stop loading")
         mFromArc = 0f
         mToArc = 0f
         mState = State.IDLE
