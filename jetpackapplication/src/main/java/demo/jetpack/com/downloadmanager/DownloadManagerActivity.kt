@@ -18,10 +18,10 @@ import org.jetbrains.anko.yesButton
  */
 class DownloadManagerActivity : AppCompatActivity() {
     var progressInt = 0
-    private lateinit var downloadProgressView: DownloadProgressBar
+    private lateinit var mDownloadProgressView: DownloadProgressView
     private lateinit var rxPermissions: RxPermissions
-    private lateinit var downloadReceiver: DownloadReceiver
     private lateinit var binding: ActivityDownloadManagerBinding
+    private lateinit var viewModel:DownloadViewModel
 
     companion object {
         private const val REQUEST_CODE_GET_IMAGE = 1
@@ -33,11 +33,12 @@ class DownloadManagerActivity : AppCompatActivity() {
 
         rxPermissions = RxPermissions(this)
 
-        val downloadViewModel = DownloadViewModel()
         binding = ActivityDownloadManagerBinding.inflate(layoutInflater)
-        binding.vm = downloadViewModel
-        binding.vm!!.isDownloadCompleted.observe(this, Observer {
-            if (it) {
+        binding.vm = DownloadViewModel()
+        viewModel = binding.vm as DownloadViewModel
+        viewModel.progressInt.observe(this, Observer {
+            download_progress_view.setProgress(it)
+            if (it == 100) {
                 download_progress_view.stopLoading()
                 alert("Download file is /Download/hello.pdf", "Download") {
                     yesButton {}
@@ -45,21 +46,10 @@ class DownloadManagerActivity : AppCompatActivity() {
                 }.show()
             }
         })
-        binding.vm!!.progressInt.observe(this, Observer {
-            download_progress_view.setProgress(it)
-        })
 
         download_btn_start.setOnClickListener {
             startDownload()
         }
-
-        downloadReceiver = DownloadReceiver(downloadViewModel)
-        downloadReceiver.register(this)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        downloadReceiver.unregister(this)
     }
 
     @SuppressLint("CheckResult")
@@ -68,7 +58,7 @@ class DownloadManagerActivity : AppCompatActivity() {
             .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
             .subscribe { granted ->
                 if (granted) {
-                    binding.vm!!.startDownload()
+                    viewModel.startDownload()
                 } else {
                 }
             }

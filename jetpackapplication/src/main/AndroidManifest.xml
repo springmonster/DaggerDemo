@@ -69,12 +69,6 @@
                 android:screenOrientation="portrait"/>
         <activity android:name=".downloadmanager.DownloadManagerActivity">
         </activity>
-
-        <receiver android:name=".downloadmanager.DownloadReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>

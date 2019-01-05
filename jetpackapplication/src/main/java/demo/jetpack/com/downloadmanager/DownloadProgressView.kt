@@ -14,7 +14,7 @@ import demo.jetpack.com.R
 /**
  * @author Charles.Kuang
  */
-class DownloadProgressBar : View {
+class DownloadProgressView : View {
     private lateinit var mBackgroundPaint: Paint
     private lateinit var mDrawingPaint: Paint
 
