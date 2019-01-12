@@ -3,19 +3,28 @@
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             tools:context=".ui.activity.GardenActivity">
 
         <fragment
                 android:name="androidx.navigation.fragment.NavHostFragment"
                 android:id="@+id/activity_garden_fragment"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:defaultNavHost="true"
                 android:layout_width="match_parent"
                 app:navGraph="@navigation/nav_garden"
-                android:layout_height="match_parent"/>
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/activity_garden_bnv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:itemIconTint="@drawable/bottom_navigation_selector"
+                app:itemTextColor="@drawable/bottom_navigation_selector"
+                app:menu="@menu/main"/>
+    </LinearLayout>
 </layout>

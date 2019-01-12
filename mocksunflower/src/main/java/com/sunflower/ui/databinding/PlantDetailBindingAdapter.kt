@@ -1,4 +1,4 @@
-package com.sunflower.ui.adapter
+package com.sunflower.ui.databinding
 
 import android.text.SpannableStringBuilder
 import android.text.method.LinkMovementMethod

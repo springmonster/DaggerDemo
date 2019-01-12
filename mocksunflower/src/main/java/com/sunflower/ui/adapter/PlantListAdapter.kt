@@ -10,15 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sunflower.R
 import com.sunflower.data.PlantEntity
 import com.sunflower.databinding.ItemPlantLayoutBinding
-import com.sunflower.ui.fragment.PlantFragmentDirections
+import com.sunflower.ui.fragment.PlantListFragmentDirections
 
 class PlantListAdapter : ListAdapter<PlantEntity, PlantListAdapter.PlantViewHolder>(PlantDiff()) {
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
         holder.getBinding().plant = getItem(position)
         holder.getBinding().apply {
-            root.setOnClickListener{
+            root.setOnClickListener {
                 val navDirections =
-                    PlantFragmentDirections.actionPlantFragmentToPlantDetailFragment(getItem(position).plantId ?: "")
+                    PlantListFragmentDirections.actionPlantFragmentToPlantDetailFragment(
+                        getItem(position).plantId ?: ""
+                    )
                 it.findNavController().navigate(navDirections)
             }
         }

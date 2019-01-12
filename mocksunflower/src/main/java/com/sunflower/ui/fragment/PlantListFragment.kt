@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_plant_list.*
 /**
  *
  */
-class PlantFragment : Fragment() {
+class PlantListFragment : Fragment() {
     private lateinit var viewModel: PlantListViewModel
     private lateinit var mListAdapter: PlantListAdapter
 

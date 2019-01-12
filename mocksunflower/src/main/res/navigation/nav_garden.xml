@@ -7,7 +7,7 @@
 
     <fragment
             android:id="@+id/plantFragment"
-            android:name="com.sunflower.ui.fragment.PlantFragment"
+            android:name="com.sunflower.ui.fragment.PlantListFragment"
             android:label="fragment_plant"
             tools:layout="@layout/fragment_plant_list">
         <action
