@@ -13,7 +13,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sunflower.R
 import com.sunflower.databinding.FragmentMyGardenBinding
-import com.sunflower.ui.adapter.MyGardenAdapterWithListAdapterAndDiffUtils
+import com.sunflower.ui.adapter.MyGardenAdapter
 import com.sunflower.utils.InjectorUtil
 import com.sunflower.viewmodels.MyGardenListViewModel
 import kotlinx.android.synthetic.main.fragment_my_garden.*
@@ -23,9 +23,7 @@ import kotlinx.android.synthetic.main.fragment_my_garden.*
  *
  */
 class MyGardenFragment : Fragment() {
-//    private lateinit var adapter: MyGardenAdapter
-
-    private lateinit var adapter: MyGardenAdapterWithListAdapterAndDiffUtils
+    private lateinit var adapter: MyGardenAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,13 +43,7 @@ class MyGardenFragment : Fragment() {
             false
         )
 
-//        adapter = MyGardenAdapter()
-
-//        viewModel.plantsInGarden.observe(this, Observer {
-//            adapter.addAll(it)
-//        })
-
-        adapter = MyGardenAdapterWithListAdapterAndDiffUtils()
+        adapter = MyGardenAdapter()
         viewModel.plantsInGarden.observe(this, Observer { plants ->
             binding.hasPlantings = (plants != null && plants.isNotEmpty())
             if (plants != null && plants.isNotEmpty()) {

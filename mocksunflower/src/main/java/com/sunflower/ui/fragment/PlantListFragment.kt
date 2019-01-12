@@ -9,26 +9,19 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sunflower.data.PlantEntity
 import com.sunflower.databinding.FragmentPlantListBinding
-import com.sunflower.ui.adapter.PlantAdapter
+import com.sunflower.ui.adapter.PlantListAdapter
 import com.sunflower.utils.InjectorUtil
 import com.sunflower.viewmodels.PlantListViewModel
 import kotlinx.android.synthetic.main.fragment_plant_list.*
 
 /**
- * A simple [Fragment] subclass.
- * 这里使用了 https://developer.android.google.cn/topic/libraries/data-binding/expressions
- * 中的
- * val listItemBinding = ListItemBinding.inflate(layoutInflater, viewGroup, false)
- * or
- * val listItemBinding = DataBindingUtil.inflate(layoutInflater, R.layout.list_item, viewGroup, false)
+ *
  */
 class PlantFragment : Fragment() {
     private lateinit var viewModel: PlantListViewModel
-    private lateinit var adapter: PlantAdapter
+    private lateinit var mListAdapter: PlantListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,22 +38,15 @@ class PlantFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = PlantAdapter()
-        adapter.setItemClickListener(object : PlantAdapter.OnItemPlantClickListener {
-            override fun onItemPlantClick(view: View, plantEntity: PlantEntity?) {
-                val navDirections =
-                    PlantFragmentDirections.actionPlantFragmentToPlantDetailFragment(plantEntity?.plantId ?: "")
-                view.findNavController().navigate(navDirections)
-            }
-        })
+        mListAdapter = PlantListAdapter()
         viewModel.getPlants()?.observe(viewLifecycleOwner, Observer { it ->
             it?.let {
-                adapter.addAll(it)
+                mListAdapter.submitList(it)
             }
         })
 
         fragment_plant_list_rv.layoutManager = LinearLayoutManager(context)
-        fragment_plant_list_rv.adapter = adapter
+        fragment_plant_list_rv.adapter = mListAdapter
 
         fragment_plant_show_my_garden_btn.setOnClickListener {
             Navigation.findNavController(it).navigateUp()

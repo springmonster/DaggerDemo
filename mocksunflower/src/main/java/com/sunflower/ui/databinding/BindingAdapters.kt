@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sunflower.ui.adapter
+package com.sunflower.ui.databinding
 
 import android.view.View
 import androidx.databinding.BindingAdapter
