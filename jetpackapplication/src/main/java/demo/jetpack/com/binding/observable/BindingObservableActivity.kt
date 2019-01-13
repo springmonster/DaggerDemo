@@ -80,13 +80,6 @@ class BindingObservableActivity : AppCompatActivity() {
         ob.add("c")
 
         activity_binding_btn1.setOnClickListener {
-//            Log.d("khch", binding.bindingListTestEntity?.list?.value.toString())
-//            stringList0.add("c")
-//            stringList0.add("d")
-//            stringList0.add("e")
-//            binding.bindingListTestEntity?.list?.value = stringList0
-//            Log.d("khch", binding.bindingListTestEntity?.list?.value.toString())
-
             ob.add("d")
             ob.add("e")
             ob.add("f")

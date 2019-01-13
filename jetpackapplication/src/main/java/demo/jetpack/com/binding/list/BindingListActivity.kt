@@ -32,11 +32,12 @@ class BindingListActivity : AppCompatActivity() {
 
         }
 
-        val mutableList = mutableListOf<BindingAnimalEntity>()
-        mutableList.add(BindingAnimalEntity("Tiger", "Meat", true))
-        mutableList.add(BindingAnimalEntity("Bird", "something", false))
-        mutableList.add(BindingAnimalEntity("Lion", "Meat", true))
-        mutableList.add(BindingAnimalEntity("Goat", "Leaf", false))
+        val mutableList = mutableListOf<BindingAnimalEntity>().apply {
+            add(BindingAnimalEntity("Bird", "something", false))
+            add(BindingAnimalEntity("Lion", "Meat", true))
+            add(BindingAnimalEntity("Tiger", "Meat", true))
+            add(BindingAnimalEntity("Goat", "Leaf", false))
+        }
 
         binding.activityBindingListRv.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         bindingAdapter = BindingAdapter(this)
